@@ -1,9 +1,0 @@
-<?xml version='1.0' encoding='UTF-8' ?>
-<testsuite name="com.sennue.hellomultiprojectandroid.ExampleInstrumentedTest" tests="1" failures="0" errors="0" skipped="0" time="0.012" timestamp="2017-02-27T03:54:44" hostname="localhost">
-  <properties>
-    <property name="device" value="Nexus 6 - 6.0" />
-    <property name="flavor" value="" />
-    <property name="project" value="api" />
-  </properties>
-  <testcase name="exampleOnDeviceTest" classname="com.sennue.hellomultiprojectandroid.ExampleInstrumentedTest" time="0.0" />
-</testsuite>
