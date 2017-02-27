@@ -1,5 +1,7 @@
 package com.sennue.hellomultiprojectandroid
 
+import com.sennue.hellomultiprojectandroid.MainActivity
+
 import android.support.test.rule.ActivityTestRule
 
 import com.squareup.spoon.Spoon
