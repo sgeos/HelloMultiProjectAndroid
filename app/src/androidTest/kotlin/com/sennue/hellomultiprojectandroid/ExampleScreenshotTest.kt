@@ -1,11 +1,7 @@
 package com.sennue.hellomultiprojectandroid
 
-import com.sennue.hellomultiprojectandroid.MainActivity
-
 import android.support.test.rule.ActivityTestRule
-
 import com.squareup.spoon.Spoon
-
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
@@ -27,7 +23,6 @@ class ExampleScreenshotTest {
     }
 
     @Test
-    @Throws(Exception::class)
     fun testScreenshot() {
         Spoon.screenshot(mActivity!!, "initial_state")
     }

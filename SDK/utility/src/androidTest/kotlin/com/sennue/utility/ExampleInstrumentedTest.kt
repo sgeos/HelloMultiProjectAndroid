@@ -1,7 +1,7 @@
 package com.sennue.utility
 
 import android.support.test.runner.AndroidJUnit4
-import org.junit.Assert.assertTrue
+import junit.framework.TestCase.assertTrue
 
 import org.junit.Test
 import org.junit.runner.RunWith
