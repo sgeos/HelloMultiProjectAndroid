@@ -1,5 +1,17 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'com.stanfy.spoon:spoon-gradle-plugin:1.2.2'
+    }
+}
+
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
+apply plugin: 'spoon'
+apply plugin: 'jacoco'
 
 android {
     compileSdkVersion 25
@@ -30,6 +42,18 @@ android {
     }
 }
 
+ext {
+    jacocoVersion = "0.7.5.201505241946"
+}
+
+configurations {
+    all {
+        resolutionStrategy {
+            force "org.jacoco:org.jacoco.agent:$jacocoVersion"
+        }
+    }
+}
+
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
 
@@ -50,4 +74,34 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
+
+    // Spoon https://github.com/square/spoon
+    androidTestCompile 'com.squareup.spoon:spoon-client:1.7.1'
+
+    // Jacoco http://www.eclemma.org/jacoco/
+    // A specific version is needed for debug testCoverageEnabled
+    // working example http://stackoverflow.com/questions/41960873/error-after-updating-android-studio-to-2-2-3
+    androidTestCompile "org.jacoco:org.jacoco.agent:$jacocoVersion"
 }
+
+sonarqube {
+    properties {
+        property "sonar.projectName", "HelloMultiProjectAndroid-SDK-api"
+        property "sonar.projectKey", "HelloMultiProjectAndroid-SDK-api"
+    }
+}
+
+repositories {
+    jcenter()
+    mavenCentral()
+}
+
+spoon {
+    debug = true
+    codeCoverage = true
+    grantAllPermissions = true
+    adbTimeout = 60
+}
+
+// Do not do this because the coverage report can not generate directories that do not yet exist.
+//tasks.spoon.dependsOn 'createDebugCoverageReport'

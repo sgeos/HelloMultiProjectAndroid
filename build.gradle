@@ -2,12 +2,15 @@
 
 buildscript {
     ext.kotlin_version = '1.0.6'
+
     repositories {
         jcenter()
+        mavenCentral()
         maven {
             url "https://plugins.gradle.org/m2/"
         }
     }
+
     dependencies {
         classpath 'com.android.tools.build:gradle:2.2.3'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
@@ -17,14 +20,14 @@ buildscript {
     }
 }
 
-apply plugin: 'org.sonarqube'
-
 allprojects {
     repositories {
         jcenter()
         mavenCentral()
     }
 }
+
+apply plugin: 'org.sonarqube'
 
 subprojects {
     sonarqube {

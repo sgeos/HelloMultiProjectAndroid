@@ -1,9 +1,29 @@
-*.iml
+local.properties
+gradle.properties
+
+# for gradle, IDEA
 .gradle
+build/
+*.iml
+!.idea/runConfigurations/*
+.idea/*.xml
+.idea/.name
+.idea/copyright/
+.idea/libraries/
+.idea/scopes/
+.idea/inspectionProfiles/
 /local.properties
 /.idea/workspace.xml
 /.idea/libraries
-.DS_Store
 /build
 /captures
 .externalNativeBuild
+
+# for eclipse
+bin
+gen
+.classpath
+.project
+
+# for mac
+.DS_Store
