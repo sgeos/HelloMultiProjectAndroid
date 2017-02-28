@@ -1,4 +1,4 @@
-package com.sennue.api;
+package com.sennue.utility
 
 import org.junit.Test
 
